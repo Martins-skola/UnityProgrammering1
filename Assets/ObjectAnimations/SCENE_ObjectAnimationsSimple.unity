@@ -1091,8 +1091,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4d352ba2ae9f1745b575ce19683ee73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
-  radius: 0.75
+  speed: 9
+  radius: 0.5
   faceCenter: 0
   axis: 1
 --- !u!136 &1796503851
@@ -1365,8 +1365,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8607845c1ce3d0478fb002ddf0a993a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amplitude: 0.6
-  frequency: 5
+  amplitude: 2
+  frequency: 1
   axis: 1
 --- !u!4 &2006995078
 Transform:

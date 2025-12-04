@@ -47,4 +47,14 @@ public class PlayerCharacterControllerMovement : MonoBehaviour
             transform.position = startPoint; // Återställ positionen till startpunkten
         }
     }
+
+    // En publik metod för att återställa spelarens position till startpunkten, kan anropas från andra komponenter
+    // Vi kan inte flytta med CharacterController-komponenten direkt, eftersom den krocktestar flytten och inte tillåter "teleportering" av objektet
+    // Men kan heller inte bara använda Transform-komponenten direkt, eftersom CharacterController-komponenten kan motverka flytten med sin egen logik
+    public void ResetPosition()
+    {
+        charController.enabled = false;   // Stänger temporärt av CharacterController-komponenten, så den inte motverkar Transform-flytten med sin flytt-logik. 
+        transform.position = startPoint;  // Byter position på objektet med Transform-komponenten
+        charController.enabled = true;    // Slår på CharacterController-komponenten igen
+    }
 }
