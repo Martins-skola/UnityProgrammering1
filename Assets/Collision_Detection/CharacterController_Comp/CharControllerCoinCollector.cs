@@ -9,7 +9,7 @@ using UnityEngine;
  */
 
 
-public class CharControllerCoinCoellctor : MonoBehaviour
+public class CharControllerCoinCollector : MonoBehaviour
 {
     public int coinsCollected = 0;
     public int coinsToCollect = 3;
@@ -34,13 +34,13 @@ public class CharControllerCoinCoellctor : MonoBehaviour
         }
     }
 
-    private void OnControllerColliderHit(ControllerColliderHit hit)
+    private void OnTriggerEnter(Collider other)
     {
-        if (hit.gameObject.CompareTag("Coin"))
+        if (other.gameObject.CompareTag("Coin"))
         {
             coinsCollected++;
-            
-            hit.gameObject.SetActive(false); // Inaktivera objektet istället för att radera det, bättre för prestanda om mynten ska återanvändas
+
+            other.gameObject.SetActive(false); // Inaktivera objektet istället för att radera det, bättre för prestanda om mynten ska återanvändas
             //Destroy(hit.gameObject); använd detta om du vill radera objketet du krockade med
 
             if (coinsCollected >= coinsToCollect)
@@ -62,5 +62,6 @@ public class CharControllerCoinCoellctor : MonoBehaviour
             Debug.Log("active");
             coin.SetActive(true);
         }
+        coinsCollected = 0;
     }
 }
