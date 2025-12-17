@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Coin
   - Collectible
+  - Enemy
+  - NPC
   layers:
   - Default
   - TransparentFX
