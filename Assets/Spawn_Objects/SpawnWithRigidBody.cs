@@ -4,6 +4,7 @@ public class SpawnWithRigidBody : MonoBehaviour
 {
     public Transform spawnpoint;
     public GameObject prefabToSpawn;
+    
     void Start()
     {
         if(spawnpoint == null)
@@ -16,6 +17,11 @@ public class SpawnWithRigidBody : MonoBehaviour
         }
     }
 
+/*
+Spawn() - spawnar in refererad prefab på refererad plats (transform från ett gameobject)
+
+Anropa Spanw() från logik tillagd i denna komponent, eller från annan komponent, eller som i exemplet, från UI som en knapp
+*/
     public void Spawn()
     {
         GameObject obj = Instantiate(prefabToSpawn, spawnpoint.position, spawnpoint.rotation);
