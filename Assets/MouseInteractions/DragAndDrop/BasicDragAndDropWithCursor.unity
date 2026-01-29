@@ -535,8 +535,8 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5000001
-  m_Height: 2
+  m_Radius: 0.62
+  m_Height: 3.06
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!23 &1885682739
@@ -623,9 +623,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e43c4d8b64b58ca4b9ed13770c767c7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DragAndDropWithCursor
-  hoverCursorSprite: {fileID: -1930918923, guid: 1abbea80463e67e4e9ce89ce351d3204, type: 3}
+  hoverCursorTexture: {fileID: 2800000, guid: e901627a37de8034187a55c11a8e68a9, type: 3}
   hoverCursorOffset: {x: 0, y: 0}
-  grabCursorSprite: {fileID: 525172532, guid: 1abbea80463e67e4e9ce89ce351d3204, type: 3}
+  grabCursorTexture: {fileID: 2800000, guid: cca9ca3af922ee640bd70eb3c4de0ef0, type: 3}
   grabCursorOffset: {x: 0, y: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
