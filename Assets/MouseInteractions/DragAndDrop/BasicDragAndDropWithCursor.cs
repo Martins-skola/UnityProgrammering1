@@ -4,9 +4,9 @@ using UnityEngine;
 public class DragAndDropWithCursor : MonoBehaviour
 {
     // Texturer för olika muspekare, ange i editorn
-    public Sprite hoverCursorSprite;
+    public Texture2D hoverCursorTexture;
     public Vector2 hoverCursorOffset = Vector2.zero; // Offset från lop-left för hover-cursor
-    public Sprite grabCursorSprite;
+    public Texture2D grabCursorTexture;
     public Vector2 grabCursorOffset = Vector2.zero; // Offset från lop-left för grab-cursor
 
     private bool isDragging = false;
@@ -20,9 +20,13 @@ public class DragAndDropWithCursor : MonoBehaviour
 
     void Update()
     {
+
         // Om vi håller nere musknappen och drar objektet
         if (isDragging)
         {
+            // Ändrar/säkerställer musmarkören till grab-cursor, övriga byten sker i OnMouseUp för att undvika onödiga uppdateringar
+            Cursor.SetCursor(grabCursorTexture, grabCursorOffset, CursorMode.ForceSoftware);
+
             // Skapa en ray från kameran genom musens position
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
@@ -48,16 +52,16 @@ public class DragAndDropWithCursor : MonoBehaviour
         isDragging = false;
     }
 
-    void OnMouseEnter()
+    void OnMouseOver()
     {
         // https://docs.unity3d.com/6000.3/Documentation/ScriptReference/Cursor.SetCursor.html
-        Cursor.SetCursor(hoverCursorSprite.texture, hoverCursorOffset, CursorMode.Auto);
+        Cursor.SetCursor(hoverCursorTexture, hoverCursorOffset, CursorMode.ForceSoftware);
     }
 
     void OnMouseExit()
     {
         // https://docs.unity3d.com/6000.3/Documentation/ScriptReference/Cursor.SetCursor.html
         // Pass 'null' to the texture parameter to use the default system cursor.
-        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+        Cursor.SetCursor(null, Vector2.zero, CursorMode.ForceSoftware);
     }
 }
