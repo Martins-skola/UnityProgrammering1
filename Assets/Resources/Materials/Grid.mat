@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Plane
+  m_Name: Grid
   m_Shader: {fileID: 4800000, guid: ab49eb6446f7d6b41804a7f0fe35ea09, type: 3}
   m_Parent: {fileID: 2100000, guid: a48c234b5e1a61242a41b32c5cbf1b94, type: 2}
   m_ModifiedSerializedProperties: 0
